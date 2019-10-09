@@ -1,0 +1,18 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Registro en el cluster de Conicet}{2}{section.1}
+\contentsline {section}{\numberline {2}Sistema de claves para el acceso al cluster}{2}{section.2}
+\contentsline {section}{\numberline {3}Acceso remoto con ssh}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}Con Linux (o macOS)}{2}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Con Windows}{3}{subsection.3.2}
+\contentsline {section}{\numberline {4}Transferencia de archivos}{3}{section.4}
+\contentsline {subsection}{\numberline {4.1}Transferencia de archivos con Linux}{3}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Transferencia de archivos con Windows}{3}{subsection.4.2}
+\contentsline {section}{\numberline {5}Usar R en el servidor}{4}{section.5}
+\contentsline {subsection}{\numberline {5.1}Versiones y paquetes de R en el cluster de Conicet}{4}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Correr un trabajo de R en el servidor}{4}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Monitorear el progreso en R y escribir mensajes}{5}{subsection.5.3}
+\contentsline {section}{\numberline {6}Usar el sistema de colas para correr trabajos}{6}{section.6}
+\contentsline {subsection}{\numberline {6.1}Encolar un trabajo}{6}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Comandos que se pueden utilizar una vez enviado el trabajo}{7}{subsection.6.2}
+\contentsline {section}{\numberline {7}Screen}{8}{section.7}
+\contentsline {section}{\numberline {8}Dudas y cosas para escribir pendientes}{9}{section.8}
