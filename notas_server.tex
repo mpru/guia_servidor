@@ -198,8 +198,7 @@ Entonces para correr este programa desde la consola en mi sesión actual:
 \begin{verbatim}
 	module load gcc-6.3.0
 	cd Ejemplo
-	/share/apps/R-3.4.1/bin/Rscript correrSimulaciones.R 3 1.5 1 0 
-	lognormal "~/Ejemplo/" 1 3 20	
+	/share/apps/R-3.4.1/bin/Rscript correrSimulaciones.R 3 1.5 1 0 lognormal "~/Ejemplo/" 1 3 20
 \end{verbatim}
 
 La línea de \texttt{module} es para cargar un módulo sin el cual no se pueden usar los paquetes de R instalados (ni idea por qué, sin eso da error). Todo lo que está después de \texttt{correrSimulaciones.R} son los argumentos que le paso al código (elegidos para que corra rápido en este ejemplo). Cuando termina se habrán generado en esta carpeta los siguientes archivos con resultados:
