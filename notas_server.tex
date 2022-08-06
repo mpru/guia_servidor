@@ -18,7 +18,9 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\documentclass[paper=a4, fontsize=11pt]{article} % A4 paper and 11pt font size
+
+\usepackage[margin=2cm]{geometry}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -28,14 +30,14 @@
 
 
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
-\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+%\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
 \usepackage[spanish]{babel} % English language/hyphenation
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 
 
-\usepackage{sectsty} % Allows customizing section commands
-\allsectionsfont{ \normalfont\scshape} % Make all sections centered, the default font and small caps \centering
+%\usepackage{sectsty} % Allows customizing section commands
+%\allsectionsfont{ \normalfont\scshape} % Make all sections centered, the default font and small caps \centering
 
 \usepackage{fancyhdr} % Custom headers and footers
 \pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
@@ -65,13 +67,13 @@
 \normalfont \normalsize 
 \textsc{FACULTAD DE CIENCIAS BIOQUÍMICAS Y FARMACÉUTICAS - UNR} \\ [25pt] % Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Instrucciones para el uso del cluster de Conicet (u otros servidores) \\ % The assignment title
+\huge Instrucciones para el uso del cluster de Conicet\\ (u otros servidores) \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
 \author{Marcos Prunello} % Your name
 
-\date{\normalsize\today} % Today's date or a custom date
+\date{\normalsize 28 de diciembre de 2018} % Today's date or a custom date
 
 
 
@@ -149,6 +151,8 @@ También podría traer toda la carpeta, con todas las cosas que haya en ella. En
 	ello.fbioyf/Ejemplo /home/marcos/Documents
 \end{verbatim}
 
+Alternativamente, de forma más sencilla con el explorador de archivos de Ubuntu (Nautilus) se puede acceder al server y usar los archivos como estamos acostumbrados (copiar, pegar, eliminar, crear nuevos, etc). Puedo copiar y pegar archivos entre la compu local y el servidor. Para esto, en el explorador de archivos mirar el panel de la izquierda e ir a Other Locations, luego en la barra de abajo ir a  Connect to server y poner sftp://mprunello.fbioyf@piluso.rosario-conicet.gov.ar. Me pide la contraseña y me lleva directamente al servidor. Ahí vemos todas las carpetas del servidor, de hecho dentro de home puedo ver la carpeta restringida a cada usuario, puedo entrar sólo a  home/mprunello.fbioyf, donde tengo mis archivos. Puedo copiar y pegar como si fuera una carpeta más en mi computadora. Puede ser útil agregarla a la barra de favoritos para entrar directamente.
+
 \subsection{Transferencia de archivos con Windows}
 
 También hay que instalar un \textit{scp client} para poder hacer transferencia de archivos desde y hacia el servidor en Windows. Una opción es Putty SCP (pscp) pero yo uso WinSCP, que una vez conectado te permite ver en una especie de explorador de archivos como el de siempre de Windows tu computadora en la parte izquierda y el servidor en la parte derecha. Se descarga de \href{https://winscp.net/eng/download.php}{acá}.\\
@@ -184,7 +188,7 @@ Todo esto está contemplado en la situación de prueba que preparé en la carpet
 \begin{itemize}
 	\item \textbf{correrSimulaciones.R}: Este es el que deseo correr para hacer mi análisis. Es el que lee los argumentos pasados a través de la consola por el usuario, corre en paralelo, usa paquetes, escribe archivos y carga un conjunto de funciones que definí yo que uso para el análisis y están guardadas en el archivo funcionesParaSimular.R
 
-	\item \textbf{funcionesParaSimular.R}: archivo auxiliar con funciones que uso en mi análisis. Este archivo es cargado por correrSimulaciones\_test.R
+	\item \textbf{funcionesParaSimular.R}: archivo auxiliar con funciones que uso en mi análisis. Este archivo es cargado por correrSimulaciones\_test.R y es el que tiene el foreach que se encarga de la paralelización.
 	
 	\item \textbf{escenarios.Rdata}: un archivo que uso para armar los escenarios de las simulaciones.
 \end{itemize}
@@ -202,7 +206,6 @@ La línea de \texttt{module} es para cargar un módulo sin el cual no se pueden 
 
 \begin{itemize}
 	\item corrida1.txt
-	\item escenarios.Rdata
 	\item esc*...(uno por cada escenario)
 \end{itemize}
 
@@ -309,9 +312,9 @@ Si el trabajo ya no aparece es porque terminó. En \texttt{qstat}, los estados p
 
 \begin{itemize}
 	\item t: transfer to the system
-	\item r: runnin
+	\item r: running
 	\item s: suspended
-	ºitem S: suspended by the queue. Work is suspended for internal scheduling management, by loading or by priority queue scheduler. The work will continue running when this is possible.
+	\item S: suspended by the queue. Work is suspended for internal scheduling management, by loading or by priority queue scheduler. The work will continue running when this is possible.
 	\item T: has reached the limit of the tail (Treshold reached).
 	\item w: waiting
 	\item h: hold
